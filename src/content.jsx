@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 function Content() {
@@ -73,6 +73,7 @@ function Content() {
         <div className="result-container grid grid-rows-2 gap-10 text-[#4D8668] w-full md:w-1/2 justify-end ">
           <div className="grid grid-cols-2 gap-10 items-center">
             <img
+              alt="pokemon-official-artwork"
               className="w-full"
               src={
                 data.length != 0
@@ -119,6 +120,7 @@ function Content() {
                 {data.length != 0 ? "default sprite" : null}
               </h3>
               <img
+                alt="default-sprite"
                 className="w-2/3"
                 src={data.length != 0 ? data.sprites.front_default : null}
               />
@@ -128,6 +130,7 @@ function Content() {
                 {data.length != 0 ? "shiny sprite" : null}
               </h3>
               <img
+                alt="shiny-sprite"
                 className="w-2/3"
                 src={data.length != 0 ? data.sprites.front_shiny : null}
               />
