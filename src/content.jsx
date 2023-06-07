@@ -12,12 +12,13 @@ function Content() {
   async function getData(pokemonName) {
     if (pokemonName != "") {
       try {
+        var lowerCaseName = pokemonName.toLowerCase();
         await axios
-          .get(" https://pokeapi.co/api/v2/pokemon/" + pokemonName)
+          .get(" https://pokeapi.co/api/v2/pokemon/" + lowerCaseName)
           .then((res) => setData(res.data));
 
         await axios
-          .get("https://pokeapi.co/api/v2/pokemon-species/" + pokemonName)
+          .get("https://pokeapi.co/api/v2/pokemon-species/" + lowerCaseName)
           .then((res) => {
             setGenderRate((res.data.gender_rate / 8) * 100);
 
